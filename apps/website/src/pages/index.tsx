@@ -340,8 +340,14 @@ export default function Home(): JSX.Element {
                 <div className={styles.entryBadges}><b>No account</b><b>Desktop app</b></div>
               </div>
               <div className={styles.entryDownloadPair}>
-                <a href={download.href} target="_blank" rel="noopener noreferrer" className={styles.entryCta}><DesktopDownloadIcon platform={download.platform} />{download.platform === 'win' ? 'Windows' : 'Mac'}</a>
-                <a href={RELEASES_URL} target="_blank" rel="noopener noreferrer" className={styles.entryCta}><DesktopDownloadIcon platform={download.platform === 'win' ? 'mac' : 'win'} />{download.platform === 'win' ? 'Mac' : 'Windows'}</a>
+                <a href={download.href} target="_blank" rel="noopener noreferrer" className={styles.entryCta}>
+                  <DesktopDownloadIcon platform={download.platform} />
+                  {download.platform === 'win' ? 'Windows' : download.platform === 'linux' ? 'Linux' : 'Mac'}
+                </a>
+                <a href={RELEASES_URL} target="_blank" rel="noopener noreferrer" className={styles.entryCta}>
+                  <DesktopDownloadIcon platform={download.platform === 'win' ? 'mac' : 'win'} />
+                  {download.platform === 'win' ? 'Mac' : 'Windows'}
+                </a>
               </div>
             </article>
 
@@ -385,7 +391,7 @@ export default function Home(): JSX.Element {
           <div className={styles.pathActions}>
             <a href={download.href} target="_blank" rel="noopener noreferrer" className={styles.pathPrimaryBtn}>
               <DesktopDownloadIcon platform={download.platform} />
-              {download.platform === 'win' ? 'Download Windows' : 'Download Mac'}
+              {download.platform === 'win' ? 'Download Windows' : download.platform === 'linux' ? 'Download Linux' : 'Download Mac'}
             </a>
             <a href={RELEASES_URL} target="_blank" rel="noopener noreferrer" className={styles.pathPrimaryBtn}>
               <DesktopDownloadIcon platform={download.platform === 'win' ? 'mac' : 'win'} />

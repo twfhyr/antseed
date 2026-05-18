@@ -81,7 +81,7 @@ const TOOLS: Tool[] = [
     getEndpoint: (port) => `http://localhost:${port}/v1`,
     steps: [
       { label: 'Find the "Custom base URL" or "OpenAI API base" setting in your tool' },
-      { label: 'Set it to the proxy endpoint below', command: 'http://localhost:{port}/v1/chat/completions' },
+      { label: 'Set it to the proxy endpoint below', command: 'http://localhost:{port}/v1' },
       { label: 'Set any API key field to a placeholder value (e.g. antseed)' },
       { label: 'Select a service — requests are routed by AntSeed automatically' },
     ],
